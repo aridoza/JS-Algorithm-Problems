@@ -100,6 +100,7 @@ staircase = (n) => {
     count -= 1;
     // console.log(Array(count + 1).join(hash));
   }
-  console.log(arr);
   console.log(arr.reverse().join("\n"));
 }
+
+// Successfully submitted!
