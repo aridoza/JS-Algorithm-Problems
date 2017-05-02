@@ -6,7 +6,7 @@ diagonal (of length n) is always equal to the same number (the 'magic constant')
 Consider a 3 x 3 matrix, s, of integers in the inclusive range [1,9]. We can convert any digit, a, to any other digit, b, in the range
 [1,9] at cost |a - b|.
 
-Given s, convert it into a magis square at minimal cost by changing zero or more of its digits. Then print this cost on a new line.
+Given s, convert it into a magic square at minimal cost by changing zero or more of its digits. Then print this cost on a new line.
 
 ex:
 input:
@@ -38,7 +38,9 @@ magicSquare = (arr) => {
   let row2 = arr[1][0] + arr[1][1] + arr[1][2];
   let row3 = arr[2][0] + arr[2][1] + arr[2][2];
 
-  sums.push(col1, col2, col3, row1, row2, row3);
+  let diag = arr[0][0] + arr[1][1] + arr[2][2];
+
+  sums.push(col1, col2, col3, row1, row2, row3, diag);
   let magicConstant = 0;
   let maxCount = 1;
   let occurrences = {};
@@ -69,4 +71,11 @@ sample input (currently fails):
 4 5 8
 2 4 1
 1 9 7
+
+expected output:
+14
 */
+
+
+// Take 2:
+// sum of any row, column or diagonal is always equal to the same number (the magic constant)
